@@ -73,8 +73,8 @@ const SecondaryContainer = () => {
     
           <SwiperSlide className='flex items-center'>
           <div className={style.slide} key={movie.id}>
-            <img className={style.banner} src={`${banner}${movie.poster_path}`} alt={movie.original_title} />
-            <span className={style.movieName}>{movie.original_title}</span>
+            <img key={movie.id} className={style.banner} src={`${banner}${movie.poster_path}`} alt={movie.original_title} />
+            <span key={movie.id} className={style.movieName}>{movie.original_title}</span>
           </div>
           </SwiperSlide>
 

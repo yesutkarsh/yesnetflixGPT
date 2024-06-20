@@ -7,7 +7,7 @@ import GlowingText from "../components/glowingText/GlowingText";
 import { validateData } from "@/utils/validate";
 import { auth } from "@/utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-export default function Page() {
+export default function LoginPage() {
   const email = useRef(null);
   const password = useRef(null);
   const [alert, setAlert] = useState(null);

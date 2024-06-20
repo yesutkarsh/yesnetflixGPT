@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addNowPlayingMovies } from '@/utils/storeSlice/movieSlice'
 import { options } from '@/utils/constant'
 
-export default function page() {
+export default function BrowsePage() {
 
 
   const dispatch = useDispatch()
