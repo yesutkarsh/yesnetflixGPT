@@ -1,0 +1,17 @@
+.LoginForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.363);
+    width: 100%;
+    height: 400px;
+    max-width: 600px;
+    margin: 20px;
+    box-shadow: 1px 1px 200px 1px rgba(158, 158, 158, 0.288);
+}
+
+.signOut{
+    background-color: whitesmoke;
+    position: absolute;
+}

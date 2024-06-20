@@ -1,0 +1,23 @@
+#logo{
+    background-color: rgba(0, 0, 0, 0.445);
+    width: 100%;
+    display: flex;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 50px 50px 1px rgba(0, 0, 0, 0.685);
+}
+
+.signOut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:7px;
+    background-color: rgba(255, 39, 39, 0.301);
+    border-radius: 22px;
+    height: 35px;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+}
