@@ -2,11 +2,11 @@
 import React, { useEffect } from 'react'
 import MainContainer from './components/MainContainer'
 import SecondaryContainer from './components/SecondaryContainer'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addNowPlayingMovies } from '@/utils/storeSlice/movieSlice'
 import { options } from '@/utils/constant'
 
-export default function Page() {
+export default function BrowsePage() {
 
 
   const dispatch = useDispatch()

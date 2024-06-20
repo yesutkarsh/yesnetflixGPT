@@ -8,7 +8,7 @@ import { addUser, removeUser } from '@/utils/storeSlice/userSlice'
 import { auth } from '@/utils/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 
-export default function page() {
+export default function HomePage() {
 
 
   return (
