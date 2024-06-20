@@ -3,7 +3,6 @@ import { logo } from '@/utils/constant'
 import style from "./nav.module.css"
 import { auth } from '@/utils/firebase'
 import {signOut } from 'firebase/auth';
-
 export default function NavBar() {
 
 

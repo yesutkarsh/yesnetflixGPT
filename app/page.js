@@ -1,15 +1,12 @@
 "use client"
 import React, { useState } from 'react'
-import Loader from '@/loader/Loader'
 import Button from './components/button/Button'
 import Link from 'next/link'
 import GlowingText from './components/glowingText/GlowingText'
-import { addUser, removeUser } from '@/utils/storeSlice/userSlice'
-import { auth } from '@/utils/firebase'
-import { onAuthStateChanged } from 'firebase/auth'
+import "./globals.css";
 
 export default function HomePage() {
-
+  const buttClk = ()=>{console.log("Clicked")}
 
   return (
     
@@ -26,7 +23,7 @@ export default function HomePage() {
       }
        <br />
       <span>
-      <GlowingText link="/login" text="Already Have Account, Sign In"/>
+      <GlowingText link="/login" buttonClicked={buttClk} text="Already Have Account, Sign In"/>
       </span>
       </div>
     </div>
