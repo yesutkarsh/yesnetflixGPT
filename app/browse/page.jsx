@@ -6,10 +6,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addNowPlayingMovies } from '@/utils/storeSlice/movieSlice'
 import { options } from '@/utils/constant'
 
-export default function BrowsePage() {
+export default function Page() {
 
 
   const dispatch = useDispatch()
+
+
+
+
   const getNowPlayingMovies = async ()=>{
     const data =await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
     const json = await data.json()
