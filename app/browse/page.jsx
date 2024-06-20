@@ -1,44 +1,8 @@
-"use client"
-import React, { useEffect } from 'react'
-import MainContainer from './components/MainContainer'
-import SecondaryContainer from './components/SecondaryContainer'
-import { useDispatch } from 'react-redux'
-import { addNowPlayingMovies } from '@/utils/storeSlice/movieSlice'
-import { options } from '@/utils/constant'
+import React from 'react'
+import BrowsePage from './Browse'
 
-export default function BrowsePage() {
-
-
-  const dispatch = useDispatch()
-
-
-
-
-  const getNowPlayingMovies = async ()=>{
-    const data =await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
-    const json = await data.json()
-    let movies = json.results
-    dispatch(addNowPlayingMovies(movies))
-  }
-  useEffect(()=>{getNowPlayingMovies()
-
-
-
-  },[])
-
+export default function page() {
   return (
-    
-
-
-
-    <>
-    <MainContainer/>
-    <div className='-mt-[200px]'>
-    <SecondaryContainer/>
-
-    </div>
-    
-    
-    </>
+    <BrowsePage/>
   )
 }
