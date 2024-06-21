@@ -11,10 +11,6 @@ import style from './style.module.css';
 import { banner, swiperSettings } from '@/utils/constant';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Import base styles of Swiper
-import 'swiper/css/navigation'; // Import Swiper navigation styles
-import 'swiper/css/pagination'; // Import Swiper pagination styles
-import SwiperCore, { Navigation, Pagination } from 'swiper'; // Import Swiper core modules
-SwiperCore.use([Navigation, Pagination]); // Initialize Swiper modules
 
 const SecondaryContainer = () => {
   const [movies, setMovies] = useState([]);
