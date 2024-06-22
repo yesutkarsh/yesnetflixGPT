@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import style from "./movieDetail.module.css";
 import { banner } from '@/utils/constant';
+import { motion } from 'framer-motion';
 
 export default function ViewMovieDetails({ title, description, likes, ratings, poster, release, close }) {
   const [readMore, setReadMore] = useState(100);
@@ -27,7 +28,7 @@ export default function ViewMovieDetails({ title, description, likes, ratings, p
   const escapedDescription = escapeHtml(description);
 
   return (
-    <div className={style.MovieDetailCard}>
+    <motion.div initial={{opacity:0, top:"70%"}} animate={{opacity:1, top:"50%"}}  className={style.MovieDetailCard}>
       <div className={style.Nav}>
         <i onClick={handleClose} className="ri-close-large-fill"></i>
       </div>
@@ -50,6 +51,6 @@ export default function ViewMovieDetails({ title, description, likes, ratings, p
           {readMore === 100 ? 'Read More' : 'Read Less'}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 }

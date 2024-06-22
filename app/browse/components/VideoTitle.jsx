@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import style from "./style.module.css"
 import ViewMovieDetails from '@/components/ViewMovieDetails'
+import { motion } from 'framer-motion'
 export default function VideoTitle() {
 
     const [data, setData] = useState({})
@@ -45,16 +46,17 @@ useEffect(()=>{
 
 
   return (
-    <div className={style.Movietitle}>
-    <div className={style.title}>
+    <motion.div className={style.Movietitle}>
+    <motion.div initial={{opacity:0, marginRight:"200px", fontSize:"20px"}} animate={{opacity:1, marginRight:"0px", fontSize:"60px"}}  className={style.title}>
 {data[0]?.original_title}
-    </div>
+    </motion.div>
     <div className={style.description}>
       {data[0]?.overview}
     </div>
 
 {/* {console.log(data)} */}
     <div className='flex gap-7'>
+<motion.div className='flex gap-7' initial={{display:"none"}} animate={{display:"flex"}}>
       <button onClick={showMovieDetails} className={style.knowMore}>
     <i class="ri-bookmark-fill"></i>
        Know More
@@ -64,6 +66,7 @@ useEffect(()=>{
        <i class="ri-thumb-up-fill"></i>
        {data[0]?.vote_count}
        </button>
+</motion.div>
 {
 
 viewDetails?
@@ -80,6 +83,6 @@ viewDetails?
 :null
       }
        </div>
-    </div>
+    </motion.div>
   )
 }

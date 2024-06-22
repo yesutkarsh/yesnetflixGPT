@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 export default function VideoBackground() {
     const dispatch = useDispatch()
     const trailerKey = useSelector(store => store.movies?.movieTrailer)
-    console.log(trailerKey)
+    // console.log(trailerKey)
     const nowPlayingMovies = useSelector(store => store.movies?.nowPlayingMovies)
     const [sound, setSound] = useState(true)
 
