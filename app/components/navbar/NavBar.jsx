@@ -16,11 +16,18 @@ export default function NavBar() {
 
   return (
     <div  id={style.logo}>
+
+
     <img  className='w-[200px] ' src={logo} alt={"logo"} />
-    <i class="ri-user-3-fill"></i>
-    <button onClick={SignOut} className={style.signOut} >
+
+
+
+    
+    <div onClick={SignOut}>
+    <button className={style.signOut} >
     <i class="ri-logout-circle-line"></i>
       Sign Out</button>
+    </div>
     </div>
   )
 }

@@ -1,9 +1,20 @@
 .loader {
+  position: absolute;
+   z-index: 999;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+  .dark{
+    position: absolute;
+    z-index: 888;
+    background-color: rgba(0, 0, 0, 0.89);
+    height: 100%;
+    width: 100%;
+  }
   .bar {
     display: inline-block;
     width: 3px;

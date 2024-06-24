@@ -1,0 +1,22 @@
+.BottomNav{
+    position: fixed;
+    bottom: 40px;
+    z-index: 999;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    list-style: none;
+    gap: 70px;
+    font-weight: 400;
+    color: rgb(150, 147, 147);
+
+}
+.blackBox{
+    background-color: rgba(0, 0, 0, 0.945);
+    height: 0px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 888;
+    box-shadow: 1px 1px 100px 150px rgb(0, 0, 0);
+}

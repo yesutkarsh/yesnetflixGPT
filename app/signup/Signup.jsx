@@ -9,6 +9,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/aut
 import { auth } from '@/utils/firebase'
 import { useDispatch } from 'react-redux'
 import { addUser } from '@/utils/storeSlice/userSlice'
+import Loader from '@/loader/Loader'
 export default function SignUpPage() {
 
 
@@ -19,7 +20,7 @@ export default function SignUpPage() {
   const dispatch = useDispatch()
 
 const [alert, setAlert] = useState(null)
-const [animte, setAnimte] =  useState(false)
+const [animate, setAnimate ] = useState(false)
 
 
 
@@ -27,14 +28,13 @@ const [animte, setAnimte] =  useState(false)
   const handleButtonClick = () => {
     const valueOfemail = email.current.value;
     const valueOfpassword = password.current.value;
-    const valueOfdisplayName  = displayName.current.value;
 
     // Form Validation
     let isDataValid = validateData(valueOfemail, valueOfpassword);
     if(isDataValid){
       setAlert(isDataValid)
     }else{
-
+setAnimate(true)
     //Create Account
     createUserWithEmailAndPassword(auth,valueOfemail, valueOfpassword)
     
@@ -68,14 +68,19 @@ const [animte, setAnimte] =  useState(false)
     <InputComp reference={password} w="5" placeholder="Password" type="Password"/>
     <p className='text-red-600 text-left w-72'>{alert}</p>
     <br />
-    <Button buttonClicked={handleButtonClick} animte={animte} text="Sign Up" />
+    <div onClick={handleButtonClick}>
+    <Button text="Sign Up" />
+    </div>
     <br />
     <div >
     <GlowingText link="/login" text="Already Have Account, Sign In"/>
     </div>
         </form>
       </div>
+    {animate? <Loader/>:null}
     </div>
+
+
     </>
   )
 }

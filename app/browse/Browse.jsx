@@ -33,9 +33,8 @@ export default function BrowsePage() {
 
     <>
     <MainContainer/>
-    <div className='-mt-[200px]'>
+    <div className='-mt-[200px] mb-[150px]'>
     <SecondaryContainer/>
-
     </div>
     
     

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body{
+  user-select: none;
   overflow-x: hidden;
   background-color: rgb(0, 0, 0);
 }
@@ -12,7 +13,7 @@ body{
   place-items: center;
   place-content: center;
   position: relative;
- background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/51c1d7f7-3179-4a55-93d9-704722898999/be90e543-c951-40d0-9ef5-e067f3e33d16/IN-en-20240610-popsignuptwoweeks-perspective_alpha_website_medium.jpg
+ background-image: url(https://wallpapers.com/images/featured/movie-9pvmdtvz4cb0xl37.jpg
  );
  height: 100VH; 
  background-size: cover;
@@ -23,14 +24,14 @@ body{
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.767);
+  background-color: rgba(0, 0, 0, 0.938);
   z-index: 2;
 }
 
 
 .hero{
   position: absolute;
-  z-index: 999;
+  z-index: 700;
   color: white;
   font-weight: 500;
   font-size: 50PX;
@@ -56,3 +57,18 @@ body{
 
 
 
+.search{
+  background-color: rgb(22, 22, 22);
+  width: 300px;
+  padding: 20px;
+  border-radius: 22px;
+  font-weight: 200;
+  font-size: 20PX;
+}
+
+
+.logo{
+  /* background-color: aliceblue; */
+  height: 100px;
+  /* width: 300px; */
+}

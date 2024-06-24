@@ -3,7 +3,10 @@ import { addMovieTrailer } from '@/utils/storeSlice/movieSlice'
 import React, { useEffect, useState } from 'react'
 import style from "./style.module.css"
 import { useDispatch, useSelector } from 'react-redux'
+import Loader from '@/loader/Loader'
 export default function VideoBackground() {
+    const [animate, setAnimate ] = useState(true)
+
     const dispatch = useDispatch()
     const trailerKey = useSelector(store => store.movies?.movieTrailer)
     // console.log(trailerKey)
@@ -15,23 +18,27 @@ export default function VideoBackground() {
 
         const movieId = nowPlayingMovies[0]
         const { id } = movieId
+        if(!trailerKey){
 
-        const fetchMovieVideoId = async () => {
-            const moviId = nowPlayingMovies[0].id
-            if (!moviId) return
-            try {
-                const data = await fetch("https://api.themoviedb.org/3/movie/" + moviId + "/videos?language=en-US", options)
-                const json = await data.json()
-                const trailerKey = json.results.filter((video) => video.type == "Trailer")[1].key
-                if (trailerKey) {
-                    dispatch(addMovieTrailer(trailerKey))
+            const fetchMovieVideoId = async () => {
+                const moviId = nowPlayingMovies[0].id
+                if (!moviId) return
+                try {
+                    const data = await fetch("https://api.themoviedb.org/3/movie/" + moviId + "/videos?language=en-US", options)
+                    const json = await data.json()
+                    const trailerKey = json.results.filter((video) => video.type == "Trailer")[1].key
+                    if (trailerKey) {
+                        dispatch(addMovieTrailer(trailerKey))
+                    }
+                } catch (error) {
+                    console.log(error)
                 }
-            } catch (error) {
-                console.log(error)
             }
+            
+            fetchMovieVideoId()
         }
 
-        fetchMovieVideoId()
+        setAnimate(false)
 
     }, [nowPlayingMovies, dispatch])
 
@@ -42,6 +49,7 @@ export default function VideoBackground() {
                     allow="autoplay; encrypted-media"
                     allowFullScreen
                 ></iframe>
+                {animate?<Loader/> : null}
         </>
     )
 }

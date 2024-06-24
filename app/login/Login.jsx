@@ -7,7 +7,14 @@ import GlowingText from "../components/glowingText/GlowingText";
 import { validateData } from "@/utils/validate";
 import { auth } from "@/utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Loader from "@/loader/Loader";
+
+
+
 export default function LoginPage() {
+
+  const [animate, setAnimate ] = useState(false)
+
   const email = useRef(null);
   const password = useRef(null);
   const [alert, setAlert] = useState(null);
@@ -20,6 +27,7 @@ export default function LoginPage() {
       setAlert(isDataValid);
     } else {
       //Login Account
+      setAnimate(true)
       signInWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
           // Signed in
@@ -58,13 +66,16 @@ export default function LoginPage() {
           />
           <p className="text-red-600 text-left w-72">{alert}</p>
           <br />
-          <Button id="butt" buttonClicked={handleButtonClick} text="Log In" />
+          <div onClick={handleButtonClick}>
+          <Button id="butt" text="Log In" />
+          </div>
           <br />
           <div>
             <GlowingText link="/signup" text="New To Us, Sign Up" />
           </div>
         </form>
       </div>
+      {animate? <Loader/>:null}
     </div>
   );
 }

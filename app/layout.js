@@ -11,6 +11,7 @@ import { auth } from "@/utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "@/utils/storeSlice/userSlice";
 import { useRouter } from "next/navigation";
+import BottomNav from "./components/BottomNav/BottomNav";
 const inter = Inter({ subsets: ["latin"] });
 
 function Layout({ children }) {
@@ -40,7 +41,7 @@ function Layout({ children }) {
 
   return (
     <>
-      {!isLogin && !isSignup && !home && <NavBar />}
+      {!isLogin && !isSignup && !home && <> <NavBar /> <BottomNav/></>}
       <main>{children}</main>
     </>
   );

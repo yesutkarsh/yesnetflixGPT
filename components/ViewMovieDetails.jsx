@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from "./movieDetail.module.css";
 import { banner } from '@/utils/constant';
 import { motion } from 'framer-motion';
+import Loader from '@/loader/Loader';
 
 export default function ViewMovieDetails({ title, description, likes, ratings, poster, release, close }) {
   const [readMore, setReadMore] = useState(100);
+  const [animate, setAnimate ] = useState(true)
 
   const handleToggleReadMore = () => {
-    setReadMore(prevReadMore => (prevReadMore === 100 ? description.length+100 : 100));
+    setReadMore(prevReadMore => (prevReadMore === 100 ? description.length + 100 : 100));
   };
 
   const handleClose = () => {
@@ -26,11 +28,17 @@ export default function ViewMovieDetails({ title, description, likes, ratings, p
   };
 
   const escapedDescription = escapeHtml(description);
-
   return (
-    <motion.div initial={{opacity:0, top:"70%"}} animate={{opacity:1, top:"50%"}}  className={style.MovieDetailCard}>
-      <div className={style.Nav}>
-        <i onClick={handleClose} className="ri-close-large-fill"></i>
+    <>
+
+    <motion.div 
+      initial={{ opacity: 0, top: "70%" }} 
+      animate={{ opacity: 1, top: "50%" }} 
+      exit={{ opacity: 0, top: "70%" }} 
+      className={style.MovieDetailCard}
+    >
+      <div onClick={handleClose} className={style.Nav}>
+        <i  className="ri-close-large-fill"></i>
       </div>
       <div className={style.banner}>
         <img src={`${banner}${poster}`} alt={`${title} poster`} />
@@ -51,6 +59,11 @@ export default function ViewMovieDetails({ title, description, likes, ratings, p
           {readMore === 100 ? 'Read More' : 'Read Less'}
         </span>
       </div>
+      <Loader/>
+
     </motion.div>
+    </>
+
+
   );
 }
