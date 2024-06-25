@@ -8,7 +8,7 @@ import ViewMovieDetails from "../ViewMovieDetails";
 import Loader from "@/loader/Loader";
 export default function SearchBar() {
 
-  {console.log(process.env.apikey)}
+  {console.log(process.env.NEXT_PUBLIC_GEMINI_KEY)}
   
   const [recomendedMovies, setRecomendedMovies] = useState([{original_title:"Hello"}])
   const [viewDeatils, setDetails] = useState(false)
@@ -21,8 +21,7 @@ export default function SearchBar() {
 
   // Defining Gemini Model
   const genAI = new GoogleGenerativeAI(
-    process.env.NEXT_PUBLIC_GEMINI_KEY || process.env.apikey
-  )  
+    process.env.NEXT_PUBLIC_GEMINI_KEY)  
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
 // TMDB Calll
