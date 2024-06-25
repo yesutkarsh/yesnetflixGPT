@@ -7,10 +7,10 @@ import MovieCard from "./components/MovieCard";
 import ViewMovieDetails from "../ViewMovieDetails";
 import Loader from "@/loader/Loader";
 export default function SearchBar() {
+
+  {console.log(process.env.GEMINI_KEY)}
   
   const [recomendedMovies, setRecomendedMovies] = useState([{original_title:"Hello"}])
-
-
   const [viewDeatils, setDetails] = useState(false)
   const [warning, setWarning] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -20,7 +20,9 @@ export default function SearchBar() {
   const searchQuery = useRef(null)
 
   // Defining Gemini Model
-  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_KEY || process.env.GEMINI_KEYs)  
+  const genAI = new GoogleGenerativeAI(
+    process.env.NEXT_PUBLIC_GEMINI_KEY || process.env.GEMINI_KEY
+  )  
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
 // TMDB Calll
