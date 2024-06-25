@@ -11,7 +11,7 @@ export default function MovieCard({ id, title }) {
 
             const data = await fetch('https://api.themoviedb.org/3/movie/' + id + '/images', options);
             const response = await data.json();
-            console.log(response)
+            // console.log(response)
             if (response && response.posters && response.posters.length > 0) {
                 setImage('https://image.tmdb.org/t/p/original/' + response.posters[0].file_path);
             }

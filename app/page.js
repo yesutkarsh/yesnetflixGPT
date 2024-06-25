@@ -17,6 +17,7 @@ export default function HomePage() {
     
     <>
 
+
     <div className="movieContainer">
       <div className="dark"></div>
       <div className="hero text-white ">
@@ -39,6 +40,7 @@ export default function HomePage() {
       </div>
 
       {animate? <Loader/>:null}
+
     </div>
 
     </>

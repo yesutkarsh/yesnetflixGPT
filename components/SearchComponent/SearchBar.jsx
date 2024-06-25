@@ -5,10 +5,11 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { options } from "@/utils/constant";
 import MovieCard from "./components/MovieCard";
 import ViewMovieDetails from "../ViewMovieDetails";
-import Loader from "@/loader/Loader";
+import AILoader from "./components/AILoader";
+import { motion } from "framer-motion";
 export default function SearchBar() {
 
-  {console.log(process.env.NEXT_PUBLIC_GEMINI_KEY)}
+  // {console.log(process.env.NEXT_PUBLIC_GEMINI_KEY)}
   
   const [recomendedMovies, setRecomendedMovies] = useState([{original_title:"Hello"}])
   const [viewDeatils, setDetails] = useState(false)
@@ -43,7 +44,7 @@ const searchMovie = async(movie)=>{
       const movieArray = text.split(",")
       
       if(movieArray[1]){
-        console.log(movieArray[1])
+        // console.log(movieArray[1])
         setWarning(movieArray[0]+movieArray[1]+movieArray[2])
 
       }
@@ -71,11 +72,11 @@ console.log(error)
 
 
   return (
-    <div className={style.SearchCopmonent}>
+    <motion.div initial={{marginTop:"200px"}} animate={{marginTop:"0px"}} className={style.SearchCopmonent}>
       <div className={style.Search}>
         <form onSubmit={(e)=>e.preventDefault()} action="">
           <input ref={searchQuery} type="text" name="" placeholder="Kuch Mazedar Horror Movies" />
-          <button onClick={handleSubmit}>Go</button>
+          <button onClick={handleSubmit}>Search</button>
         </form>
       </div>
       <div className={style.Movies}>
@@ -92,7 +93,8 @@ console.log(error)
 {viewDeatils? <ViewMovieDetails title={"title"}/>:null}
 <h1>{warning}</h1>
       </div>
-      {isLoading? <Loader/>:null}
-    </div>
+      {isLoading? <AILoader/>:null}
+      
+    </motion.div>
   );
 }

@@ -44,7 +44,7 @@ setAnimate(true)
 
     const user = userCredential.user;
     dispatch(addUser(user))
-    console.log(user)
+    // console.log(user)
   })
   .catch((error) => {
     const errorCode = error.code;
