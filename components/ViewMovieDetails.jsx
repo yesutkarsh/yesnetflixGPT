@@ -6,7 +6,6 @@ import Loader from '@/loader/Loader';
 
 export default function ViewMovieDetails({ title, description, likes, ratings, poster, release, close }) {
   const [readMore, setReadMore] = useState(100);
-  const [animate, setAnimate ] = useState(true)
 
   const handleToggleReadMore = () => {
     setReadMore(prevReadMore => (prevReadMore === 100 ? description.length + 100 : 100));
@@ -24,7 +23,7 @@ export default function ViewMovieDetails({ title, description, likes, ratings, p
       '"': '&quot;',
       "'": '&#039;'
     };
-    return text.replace(/[&<>"']/g, (m) => map[m]);
+    return text?.replace(/[&<>"']/g, (m) => map[m]);
   };
 
   const escapedDescription = escapeHtml(description);
@@ -53,13 +52,12 @@ export default function ViewMovieDetails({ title, description, likes, ratings, p
         <div className='text-yellow-300'><i className="ri-star-half-s-line"></i> {ratings}</div>
       </div>
       <div className={style.Description}>
-        {escapedDescription.slice(0, readMore)}
+        {escapedDescription?.slice(0, readMore)}
         <br />
         <span onClick={handleToggleReadMore} className='text-blue-500 cursor-pointer'>
           {readMore === 100 ? 'Read More' : 'Read Less'}
         </span>
       </div>
-      <Loader/>
 
     </motion.div>
     </>

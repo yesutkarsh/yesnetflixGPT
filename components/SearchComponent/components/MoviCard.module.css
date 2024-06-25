@@ -1,0 +1,14 @@
+.movieCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+.movieCard img{
+    height: 200px;
+    border-radius: 12px;
+}
+

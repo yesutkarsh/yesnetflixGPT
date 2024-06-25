@@ -5,6 +5,7 @@ import SecondaryContainer from './components/SecondaryContainer'
 import { useDispatch } from 'react-redux'
 import { addNowPlayingMovies } from '@/utils/storeSlice/movieSlice'
 import { options } from '@/utils/constant'
+import SearchBar from '@/components/SearchComponent/SearchBar'
 
 export default function BrowsePage() {
 

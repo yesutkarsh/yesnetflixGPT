@@ -1,0 +1,46 @@
+.SearchCopmonent{
+    color: white;
+    background-color: rgba(12, 12, 12, 0.856);
+    position: absolute;
+    z-index: 609;
+    padding: 10px;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    border-radius: 12px;
+    max-width: 1000px;
+
+}
+
+.Search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    height: 50px;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 1000px 10px rgba(229, 238, 108, 0.342);
+
+}
+.Search form{
+    display: flex;
+    padding: 2px;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+}
+.Search input{
+    border: none;
+    background-color: rgba(0, 255, 255, 0);
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    color: gray;
+}
+.Search input:focus{
+    outline: none;
+}
