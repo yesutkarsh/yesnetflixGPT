@@ -20,7 +20,7 @@ export default function SearchBar() {
   const searchQuery = useRef(null)
 
   // Defining Gemini Model
-  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_KEY)  
+  const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_KEY || process.env.GEMINI_KEYs)  
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
 
 // TMDB Calll
