@@ -26,16 +26,16 @@ export default function HomePage() {
          {/* <br /> */}
 {/* <span className='search'> AI Search: Kuch Majedar 😎 hindi movies</span> <br /> */}
       {
-      <Link href="/signup">
+      <Link href="/browse">
         <div onClick={Animate}>
-      <Button text="Sign Up"/>
+          
+      <Button text="Get Started"/>
         </div>
       </Link>
       }
        <br />
 
       <span>
-      <GlowingText link="/login" buttonClicked={buttClk} text="Already Have Account, Sign In"/>
       </span>
       </div>
 

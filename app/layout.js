@@ -6,38 +6,16 @@ import { usePathname } from "next/navigation";
 import NavBar from "./components/navbar/NavBar";
 import { Provider, useDispatch } from "react-redux";
 import store from "@/utils/store";
-import { useEffect } from "react";
-import { auth } from "@/utils/firebase";
-import { onAuthStateChanged } from "firebase/auth";
-import { addUser, removeUser } from "@/utils/storeSlice/userSlice";
-import { useRouter } from "next/navigation";
 import BottomNav from "./components/BottomNav/BottomNav";
 const inter = Inter({ subsets: ["latin"] });
 
 function Layout({ children }) {
-  const dispatch = useDispatch();
   const pathname = usePathname();
   const home = pathname === "/";
   const isLogin = pathname === "/login";
   const isSignup = pathname === "/signup";
-  const navigate = useRouter()
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, email } = user;
-        dispatch(addUser({ uid, email }));
-        navigate.push("/browse")
-        
-      } else {
-        dispatch(removeUser());
-        navigate.push("/")
-      }
-    });
 
-    // Cleanup subscription on unmount
-    return () => unsubscribe();
-  }, [dispatch]);
 
   return (
     <>
