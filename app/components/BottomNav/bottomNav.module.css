@@ -13,11 +13,25 @@
 
 }
 .blackBox{
-    background-color: rgba(0, 0, 0, 0.945);
+    background-color: rgba(0, 0, 0, 0.993);
     height: 0px;
     position: fixed;
     width: 100%;
     bottom: 0;
     z-index: 888;
     box-shadow: 1px 1px 100px 150px rgb(0, 0, 0);
+}
+
+.BottomNav li{
+    background-color: rgb(19, 19, 19);
+    border-radius: 22PX;
+    min-width: 130PX;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 10px;
+    font-weight: 400;
+    color: white;
+    
 }

@@ -44,11 +44,14 @@ export default function VideoBackground() {
 
     return (
         <>
+        <div className={style.video}>
+
                 <iframe className='w-screen  h-screen absolute z-[-99] -mt-20'
                     src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailerKey}`}
                     allow="autoplay; encrypted-media"
                     allowFullScreen
-                ></iframe>
+                    ></iframe>
+                    </div>
                 {animate?<Loader/> : null}
         </>
     )

@@ -19,8 +19,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: rgb(241, 241, 241);
-    height: 50px;
+    position: relative;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 60px;
     border-radius: 12px;
     margin-top: 10px;
     box-shadow: 1px 1px 1000px 10px rgba(229, 238, 108, 0.342);

@@ -20,11 +20,9 @@ export default function BottomNav() {
     <>
 
     <div className={style.BottomNav}>
-        <li>Home</li>
         <li onClick={toggleSearc}>
-        {!searchBar? "Search" : <i class="ri-close-large-line"></i>}
+        {!searchBar? <>  <i class="ri-search-line"></i> AI-Search </> : <i class="ri-close-large-line"></i>}
           </li>
-        <li>Profile</li>
 
     </div>
     <div className={style.blackBox}>

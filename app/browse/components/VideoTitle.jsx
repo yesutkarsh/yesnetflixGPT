@@ -47,9 +47,11 @@ useEffect(()=>{
 
   return (
     <motion.div className={style.Movietitle}>
-    <motion.div initial={{opacity:0, marginRight:"200px", fontSize:"20px"}} animate={{opacity:1, marginRight:"0px", fontSize:"60px"}}  className={style.title}>
+      <div className={style.movietitle}>
+    <motion.div className={style.title}>
 {data[0]?.original_title}
     </motion.div>
+      </div>
     <div className={style.description}>
       {data[0]?.overview}
     </div>
@@ -59,7 +61,7 @@ useEffect(()=>{
 <motion.div className='flex gap-7' initial={{display:"none"}} animate={{display:"flex"}}>
       <button onClick={showMovieDetails} className={style.knowMore}>
     <i class="ri-bookmark-fill"></i>
-       Know More
+       Now Playing
        </button>
 
        <button className={style.knowMore}>

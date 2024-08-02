@@ -102,9 +102,40 @@
     position: absolute;
     top: 0;
 }
+.movietitle{
+    font-size: 100px;
+    text-wrap: wrap;
+    max-width: 600px;
 
+}
 
 .slick-slide > div{
     margin: 10px;
 }
 
+@media screen and (max-width:768px) {
+
+.Movietitle{
+    height: 65vh;
+}
+.title{
+    margin-top: 10px;
+   }
+   .video{
+    position: absolute;
+    margin-top: -210px;
+   }
+.movietitle{
+    font-size: 30px;
+    max-width: 200px;
+}
+.description{
+    font-size: 12px;
+    color: white;
+    margin-top: 20px;
+}
+.knowMore{
+    padding: 10px;
+
+}
+}
